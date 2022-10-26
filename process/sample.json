@@ -1,0 +1,16 @@
+{
+    "chip.always_use_pooled_ctl": true,
+    "chip.ctl_fastqs_rep1_R1": [
+        "gs://input-data-mirrored/input_fastqs/data_from_noam/ENCFF535UZX.fastq.gz"
+    ],
+    "chip.fastqs_rep1_R1": [
+        "gs://input-data-mirrored/input_fastqs/data_from_noam/ENCFF397XRQ.fastq.gz",
+        "gs://input-data-mirrored/input_fastqs/data_from_noam/ENCFF938HHV.fastq.gz"
+    ],
+    "chip.genome_tsv": "gs://ihec-output/reference/hg38.tsv",
+    "chip.paired_end": false,
+    "chip.pipeline_type": "histone",
+    "chip.description": "Histone ChIP-Seq SE ENCFF397XRQ+ENCFF938HHV controlled by ENCFF535UZX",
+    "chip.title": "Histone ChIP-Seq SE ENCFF397XRQ+ENCFF938HHV controlled by ENCFF535UZX"
+}
+
