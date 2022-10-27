@@ -9,7 +9,7 @@ $ caper init gcp
 Install dependencies.
 ```bash
 sudo apt-get install trimmomatic -y # version 39
-sudo apt-get install samtools python-deeptools -y
+sudo apt-get install samtools python3-deeptools -y
 
 # install singularity on Ubuntu 20.04
 # See https://neuro.debian.net/install_pkg.html?p=singularity-container for other Ubuntu OS

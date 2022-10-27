@@ -18,7 +18,7 @@ echo "$(date): Localizing $FASTQ"
 gsutil cp $1 .
 
 echo "$(date): Running Triommomatic..."
-java -jar /usr/share/java/trimmomatic-0.39.jar SE $LOCAL_FASTQ $2 CROP:36 MINLEN:1
+java -jar /usr/share/java/trimmomatic.jar SE $LOCAL_FASTQ $2 CROP:36 MINLEN:1
 gsutil cp "$TRIMMED" "$OUTPUT_BUCKET_DIR/"
 rm -f $LOCAL_FASTQ $TRIMMED
 
