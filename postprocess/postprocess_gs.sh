@@ -44,7 +44,7 @@ find "$TMP_WORKFLOW/call-filter" -name "*.noseq*" -exec cp {} "$TMP_EXPERIMENT/"
 find "$TMP_WORKFLOW/call-filter" -name "*.raw.bigwig" -exec cp {} "$TMP_EXPERIMENT/" \;
 find "$TMP_WORKFLOW/call-filter_ctl" -name "*.noseq*" -exec cp {} "$TMP_CONTROL/" \;
 sleep 5
-gsutil cp -r "$TMP_POSTPROCESS/*" "$GS_URI_OUTPUT"
+gsutil rsync -r "$TMP_POSTPROCESS" "$GS_URI_OUTPUT"
 
 echo "$(date): Deleting temp files..."
 rm -rf "$TMP_WORKFLOW"
