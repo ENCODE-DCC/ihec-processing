@@ -35,9 +35,9 @@ gsutil cp -r -n "$GS_URI_WORKFLOW_ROOT/call-xcor" "$TMP_WORKFLOW/"
 echo "$(date): Running post-processing code... can take 20-40 mins"
 
 mkdir -p "$TMP_POSTPROCESS"
-python3 postprocess.py "$SINGULARITY_IMAGE" "$TMP_WORKFLOW" > "$TMP_POSTPROCESS/run.sh"
-cat "$TMP_POSTPROCESS/run.sh"
-bash "$TMP_POSTPROCESS/run.sh" > "$TMP_POSTPROCESS/log.txt" 2>&1
+#python3 postprocess.py "$SINGULARITY_IMAGE" "$TMP_WORKFLOW" > "$TMP_POSTPROCESS/run.sh"
+#cat "$TMP_POSTPROCESS/run.sh"
+#bash "$TMP_POSTPROCESS/run.sh" > "$TMP_POSTPROCESS/log.txt" 2>&1
 
 echo "$(date): Transferring postprocessed outputs to gs://"
 find "$TMP_WORKFLOW/call-filter" -name "*.noseq*" -exec cp {} "$TMP_EXPERIMENT/" \;

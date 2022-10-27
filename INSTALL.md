@@ -21,3 +21,15 @@ sudo apt-get update && sudo apt-get install singularity-container -y
 
 And then run `install.sh`.
 
+
+## Temp directory permission
+
+Grant all permissions to anyone on the instance.
+
+```bash
+$ cd ihec-processing # go to git directory
+$ chmod 777 -R .
+$ sudo setfacl -R -d -m u::rwX .
+$ sudo setfacl -R -d -m g::rwX .
+$ sudo setfacl -R -d -m o::rwX .
+```
