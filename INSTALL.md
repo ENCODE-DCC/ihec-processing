@@ -32,3 +32,9 @@ $ sudo setfacl -R -d -m u::rwX .
 $ sudo setfacl -R -d -m g::rwX .
 $ sudo setfacl -R -d -m o::rwX .
 ```
+
+## Example
+
+See [this](./DEV.md)
+
+
