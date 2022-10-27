@@ -1,3 +1,7 @@
+# Installation
+
+See [this](./INSTALL.md).
+
 # How to run
 
 
