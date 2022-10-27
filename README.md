@@ -30,7 +30,7 @@ $ caper list
 
 Based on [this code](https://github.com/IHEC/integrative_analysis_chip/tree/dev-organize-output/encode-wrapper/postprocess)
  
-Deidentify PET (experiments) BAMs and control BAMS. Then make a `bamCoverage` signal track for PET BAMs. This script will find all PET/control BAMs on `WORKFLOW_ROOT_GS_URI` and store postprocessed outputs on `OUTPUT_DIR_GS_URI`. **NO TRAILING SLASH ALLOWED FOR GS URI!**
+Deidentify experiment BAMs and control BAMS. Then make a `bamCoverage` signal track for experiment BAMs. This script will find all BAMs on `WORKFLOW_ROOT_GS_URI` and store postprocessed outputs on `OUTPUT_DIR_GS_URI`. **NO TRAILING SLASH ALLOWED FOR GS URI!**
 
 ```bash
 $ cd postprocess # will make tmp directory inside it
