@@ -32,6 +32,9 @@ gsutil cp -r -n "$GS_URI_WORKFLOW_ROOT/call-filter_ctl" "$TMP_WORKFLOW/"
 gsutil cp -r -n "$GS_URI_WORKFLOW_ROOT/call-bwa" "$TMP_WORKFLOW/"
 gsutil cp -r -n "$GS_URI_WORKFLOW_ROOT/call-xcor" "$TMP_WORKFLOW/"
 
+echo "$(date): Localizing call-cached outputs if exist..."
+find "$TMP_WORKFLOW" -name call_caching_placeholder.txt -exec bash -c "ORG=\$(cat {} | grep -Po '(gs://.*)') && DEST=\$(dirname \$(dirname {})) && gsutil rsync -r \$ORG \$DEST" \;
+
 echo "$(date): Running post-processing code... can take 20-40 mins"
 
 mkdir -p "$TMP_POSTPROCESS"
