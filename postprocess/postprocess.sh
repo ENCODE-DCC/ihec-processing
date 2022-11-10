@@ -43,13 +43,7 @@ $bin/samtools flagstat $strippedbam > "$strippedbam".flagstats
 echo "#flagstats ${strippedbam}.flagstats"
 
 
-#extendreads="--extendReads ${2:-}"
-extendreads="--extendReads $2"
-
-if [ "$#" -gt 2 ]; then
-  echo "Skipping bamCoverage on control BAM"
-  exit 0
-fi
+extendreads="--extendReads ${2:-}"
 
 $bin/bamCoverage $extendreads -b $bamfile -o $bw -of bigwig --binSize 1 --maxFragmentLength 1000 -p 8
 echo "#return:$? $bw $bamfile"

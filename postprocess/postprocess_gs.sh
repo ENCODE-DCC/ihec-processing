@@ -15,10 +15,7 @@ WORKFLOW_ID=$(basename "$GS_URI_WORKFLOW_ROOT")
 CWD=$(pwd)
 TMP_ROOT="$CWD/tmp"
 TMP_WORKFLOW="$TMP_ROOT/$WORKFLOW_ID"
-TMP_POSTPROCESS="$TMP_WORKFLOW/postprocess_output"
-TMP_EXPERIMENT="$TMP_POSTPROCESS/experiment"
-TMP_CONTROL="$TMP_POSTPROCESS/control"
-mkdir -p "$TMP_POSTPROCESS" "$TMP_EXPERIMENT" "$TMP_CONTROL"
+mkdir -p "$TMP_WORKFLOW"
 
 SH_SCRIPT_DIR=$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)
 SINGULARITY_IMAGE="$SH_SCRIPT_DIR/chip-seq-pipeline-v1.1.4-sambamba-0.7.1-rev1.simg"
@@ -37,17 +34,25 @@ find "$TMP_WORKFLOW" -name call_caching_placeholder.txt -exec bash -c "ORG=\$(ca
 
 echo "$(date): Running post-processing code... can take 20-40 mins"
 
-mkdir -p "$TMP_POSTPROCESS"
-python3 postprocess.py "$SINGULARITY_IMAGE" "$TMP_WORKFLOW" > "$TMP_POSTPROCESS/run.sh"
-cat "$TMP_POSTPROCESS/run.sh"
-bash "$TMP_POSTPROCESS/run.sh" > "$TMP_POSTPROCESS/log.txt" 2>&1
+python3 postprocess.py "$SINGULARITY_IMAGE" "$TMP_WORKFLOW" > "$TMP_WORKFLOW/run.sh"
+cat "$TMP_WORKFLOW/run.sh"
+bash "$TMP_WORKFLOW/run.sh" > "$TMP_WORKFLOW/run.log" 2>&1
 
-echo "$(date): Transferring postprocessed outputs to gs://"
-find "$TMP_WORKFLOW/call-filter" -name "*.noseq*" -exec cp {} "$TMP_EXPERIMENT/" \;
-find "$TMP_WORKFLOW/call-filter" -name "*.raw.bigwig" -exec cp {} "$TMP_EXPERIMENT/" \;
-find "$TMP_WORKFLOW/call-filter_ctl" -name "*.noseq*" -exec cp {} "$TMP_CONTROL/" \;
-sleep 5
-gsutil rsync -r "$TMP_POSTPROCESS" "$GS_URI_OUTPUT"
+echo "$(date): remove unnecessary files"
+find "$TMP_WORKFLOW" -type f ! \
+\( -name "*.noseq.bam" -o \
+-name "*.bigwig" -o \
+-name "*.pval0.01.500K.bfilt.narrowPeak.gz" -o \
+-name "*.pval0.01.500K.narrowPeak.gz" -o \
+-name "qc.json" -o \
+-name "qc.html" -o \
+-name "run.sh" -o \
+-name "run.log" -o \
+-name "*.qc" \) -delete
+find "$TMP_WORKFLOW" -type d -empty -exec rm -rf {} \; || echo
+
+echo "$(date): rsync to gs://"
+gsutil rsync -r "$TMP_WORKFLOW" "$GS_URI_OUTPUT"
 
 echo "$(date): Deleting temp files..."
 rm -rf "$TMP_WORKFLOW"

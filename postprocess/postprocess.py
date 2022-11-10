@@ -11,19 +11,19 @@ import localutils
 
 
 def main(args):
-    #image = "./chip-seq-pipeline-v1.1.4-sambamba-0.7.1-rev1.simg"
-    #cromwell = "/data/test/leepc12/305023e2-7a40-4f34-97b0-bc3360519dbb"
     image = args[0]
     cromwell = args[1]
+    # all samples are SE
+    pet = False
 
     print('#!/bin/bash')
     print()
     chip = ENCODEChIP(image)
-    tasks = chip.postprocess(cromwell, False)
+    tasks = chip.postprocess(cromwell, ctl=False, pet=pet)
     print(tasks['postprocess.sh']['out'].strip())
 
     chip_ctl = ENCODEChIP(image)
-    tasks_ctl = chip.postprocess(cromwell, True)
+    tasks_ctl = chip_ctl.postprocess(cromwell, ctl=True, pet=pet)
     print(tasks_ctl['postprocess.sh']['out'].strip())
 
 
@@ -145,12 +145,8 @@ class ENCODEChIP:
 				'bam' : os.path.realpath(bam),
 				'additional' : ''
 			}
-			#if not pet and script in ['postprocess.sh']: 
-			#	args['additional'] = fragment
-			if ctl and script in ['postprocess.sh']:                               
-				args['additional'] = str(fragment) + ' skip_ctl'
-			if not ctl and script in ['postprocess.sh']:                               
-				args['additional'] = str(fragment)
+			if not pet and script in ['postprocess.sh']: 
+				args['additional'] = fragment
 			args['binds'] = self.base + ',' + os.path.dirname(args['bam']) 
 			args['image'] = self.image 
 			cmd = 'singularity exec --cleanenv -B {binds} {image} {script} {bam} {additional}'.format(**args)	
