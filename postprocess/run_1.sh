@@ -1,0 +1,62 @@
+#!/bin/bash
+
+set -e 
+
+#./postprocess_gs.sh gs://ihec-output/caper_out/chip/dd462744-331d-4cee-8714-2436fbab3ab2 gs://ihec-postprocessed-output/v2/IHECRE00000932.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/d639a69a-5f6b-44d3-a27f-5dcd4496d1ad gs://ihec-postprocessed-output/v2/IHECRE00000932.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/138ed915-aa02-40a3-987f-751da8fdae73 gs://ihec-postprocessed-output/v2/IHECRE00000932.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/b22009db-e34c-4edd-8979-c2d4e08d46d6 gs://ihec-postprocessed-output/v2/IHECRE00001046.7_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/0515fd32-b5d8-4033-bfc9-ac1e5b7df17e gs://ihec-postprocessed-output/v2/IHECRE00001046.7_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/8f766a6a-e94a-4cfc-baed-23703477484e gs://ihec-postprocessed-output/v2/IHECRE00001040.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/10772de9-df27-4353-9e2a-f3818714b715 gs://ihec-postprocessed-output/v2/IHECRE00001040.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/b9307194-7c57-4f63-931e-fcf2d840f8d1 gs://ihec-postprocessed-output/v2/IHECRE00001040.6_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/168d99a4-60ec-40be-bde6-f99c4302e8e2 gs://ihec-postprocessed-output/v2/IHECRE00001040.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/eeaa096e-949b-43bd-b706-1131e302e2ff gs://ihec-postprocessed-output/v2/IHECRE00000944.7_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/de2dc929-5c5b-45ad-97a1-685e41e5f38e gs://ihec-postprocessed-output/v2/IHECRE00000944.7_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/a24f7f82-cce4-44fd-b924-328fcdb9586c gs://ihec-postprocessed-output/v2/IHECRE00000944.7_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/45eb1edf-da22-409a-825a-8c89164b1c6d gs://ihec-postprocessed-output/v2/IHECRE00000944.7_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/be7643f2-864e-4aab-b682-a16b99b4b1a2 gs://ihec-postprocessed-output/v2/IHECRE00000944.7_Histone_H3K27ac
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/2643de0c-ef89-4073-b023-4437419904fc gs://ihec-postprocessed-output/v2/IHECRE00000929.7_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/2464c737-cf46-4bd0-9f08-981556a3a0e9 gs://ihec-postprocessed-output/v2/IHECRE00000929.7_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/3f72141d-4dad-4557-9820-539c08817203 gs://ihec-postprocessed-output/v2/IHECRE00000929.7_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/2cd77bba-5996-4202-bc68-9a39f24e25ed gs://ihec-postprocessed-output/v2/IHECRE00000929.7_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/09550f0b-befb-41cd-a2a7-cfab3dd6b6b9 gs://ihec-postprocessed-output/v2/IHECRE00000963.7_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/83d759d8-b113-4c96-97f9-8a82602568fc gs://ihec-postprocessed-output/v2/IHECRE00000963.7_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/773fc713-07f2-4e3a-9a9a-6bd26bef42ba gs://ihec-postprocessed-output/v2/IHECRE00000963.7_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/13f63e6e-5839-4003-a4f3-1ad6e6e2d3e9 gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/183ee979-73d4-499c-8086-b2a9b3b0d7e8 gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/0ca64e7f-9608-4bfa-81f4-e25b0a997a21 gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/de2b5c3e-4a71-40c4-8674-28478464559f gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/27b5a893-b592-47bf-bf9c-d2bbdfb06f8d gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/4812aa7a-ff1e-4606-93ab-7e4e1c4648ad gs://ihec-postprocessed-output/v2/IHECRE00001052.6_Histone_H3K27ac
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/439355be-706d-46bd-a6a1-14e1f2f0e3e3 gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/78071d98-c554-4400-b694-f7d613fcad0b gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/eaf7b4f7-3ab7-4a8c-aef3-eca182642504 gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/a8526b5f-c2ac-44bf-b9db-ca9d398b6174 gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/120e2b82-195b-45a6-92c7-be6beaf06d93 gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/11734292-b59b-4406-9dad-cc28ae46d351 gs://ihec-postprocessed-output/v2/IHECRE00001043.7_Histone_H3K27ac
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/772ebfbf-9d89-47d5-9367-d8cb1ae29fdb gs://ihec-postprocessed-output/v2/IHECRE00001040.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/3930324c-a319-43fd-b35c-1bd9e95b560b gs://ihec-postprocessed-output/v2/IHECRE00001036.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/737cd49b-ae05-460d-9c6a-4f76a14b591c gs://ihec-postprocessed-output/v2/IHECRE00001036.6_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/4289c73d-1c5c-4995-b5d1-f2894d49fee1 gs://ihec-postprocessed-output/v2/IHECRE00001036.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/5d57755f-224e-49ac-a653-ee12821bfc02 gs://ihec-postprocessed-output/v2/IHECRE00001036.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/9d6990e5-1aac-40a4-a258-28d4a94b33f8 gs://ihec-postprocessed-output/v2/IHECRE00001036.6_Histone_H3K27ac
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/84b117f7-9866-4643-aeb4-b20c57deb953 gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/ebac5206-e288-45d6-955b-bb956595a84d gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/b81c09b7-6da3-43b1-a175-883edc86e129 gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/37a1af6f-2cde-41ee-9852-33775f40063a gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/c8c39343-38ea-468f-9893-41957e807de8 gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/dfa26877-6217-4395-b4c9-849855ef55b9 gs://ihec-postprocessed-output/v2/IHECRE00001031.6_Histone_H3K27ac
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/19b40313-5e68-419c-9437-227c4b1bdfde gs://ihec-postprocessed-output/v2/IHECRE00000982.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/71861e71-4a5d-4911-971f-8411a18d0db8 gs://ihec-postprocessed-output/v2/IHECRE00000982.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/442bd608-9114-4f8a-bd49-2f70c098ab81 gs://ihec-postprocessed-output/v2/IHECRE00000982.6_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/a0bb119d-4d20-4ed0-80a7-3c47b054a5f2 gs://ihec-postprocessed-output/v2/IHECRE00000982.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/feaff497-3f61-4405-a5fc-ceaa40918c34 gs://ihec-postprocessed-output/v2/IHECRE00000982.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/2d2747df-751e-44e5-be6a-909fc5d8b498 gs://ihec-postprocessed-output/v2/IHECRE00000968.6_Histone_H3K9me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/08da99ae-ce67-42b6-8635-400770a79b25 gs://ihec-postprocessed-output/v2/IHECRE00000932.6_Histone_H3K27me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/84a260e3-fb6b-4a60-ad62-03c05f5ce187 gs://ihec-postprocessed-output/v2/IHECRE00001046.7_Histone_H3K4me1
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/c26b4f01-526c-4fc9-a6ce-b863e9348120 gs://ihec-postprocessed-output/v2/IHECRE00000977.6_Histone_H3K36me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/4a132a1f-68f1-47b1-92d9-d23b705781b3 gs://ihec-postprocessed-output/v2/IHECRE00001046.7_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/bce7d059-94cc-4643-9569-77a817700fda gs://ihec-postprocessed-output/v2/IHECRE00000977.6_Histone_H3K4me3
+./postprocess_gs.sh gs://ihec-output/caper_out/chip/9f15aa61-9772-4a96-8c98-9c0c5b4ad530 gs://ihec-postprocessed-output/v2/IHECRE00001046.7_Histone_H3K36me3
+
